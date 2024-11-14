@@ -1,0 +1,5 @@
+// app/views/reviews/create.js.erb
+
+// Mettez à jour la section des avis sans recharger la page
+$(".reviews-container").append("<%= j render(@review) %>");
+$("form#new_review")[0].reset(); // Réinitialise le formulaire

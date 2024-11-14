@@ -25,3 +25,11 @@ group :test do
   gem 'rspec-rails'                 # Ajoute la gem RSpec pour les tests
   gem 'rails-controller-testing'    # Ajoute la gem pour tester les contrôleurs Rails
 end
+
+# Gemfile
+gem "sassc-rails"
+# Gemfile
+gem "bootstrap", "~> 5.2"
+gem "autoprefixer-rails"
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form"

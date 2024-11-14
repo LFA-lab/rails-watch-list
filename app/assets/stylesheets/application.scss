@@ -10,3 +10,195 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+/* Variables pour les couleurs */
+$background-color: #f4f4f4;
+$primary-color: #ffcc00; /* Couleur jaune inspirée d'Allociné */
+$text-color: #333;
+$secondary-text-color: #666;
+$card-bg-color: white;
+$border-color: #ddd;
+$banner-overlay: rgba(0, 0, 0, 0.6);
+
+/* Corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Bannière de la liste */
+.list-banner {
+  position: relative;
+  background: url('URL_DE_L_IMAGE_DE_BANNIERE') no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.list-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $banner-overlay;
+}
+
+.list-banner .list-title {
+  position: relative;
+  z-index: 1;
+}
+
+.list-banner .movie-count {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: $primary-color;
+  color: #333;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Bouton Ajouter un film */
+.add-movie-btn {
+  display: inline-block;
+  background-color: $primary-color;
+  color: #333;
+  padding: 10px 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+/* Cartes de films */
+.movie-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background-color: $card-bg-color;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.movie-poster {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.movie-details {
+  padding: 15px;
+  color: $text-color;
+
+  .movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: $text-color;
+  }
+
+  .movie-rating {
+    font-size: 16px;
+    color: $primary-color;
+  }
+
+  .movie-overview {
+    font-size: 14px;
+    color: $secondary-text-color;
+    margin-top: 10px;
+  }
+
+  .movie-comment {
+    font-style: italic;
+    margin-top: 10px;
+    color: $text-color;
+  }
+
+  .delete-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: red;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Section des avis */
+.reviews-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: $text-color;
+    font-size: 24px;
+  }
+
+  .review-card {
+    border-bottom: 1px solid $border-color;
+    padding: 15px 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .review-rating {
+      font-size: 16px;
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    .review-date {
+      font-size: 12px;
+      color: $secondary-text-color;
+    }
+
+    .review-content {
+      margin-top: 10px;
+      color: $text-color;
+      font-size: 14px;
+    }
+  }
+}
